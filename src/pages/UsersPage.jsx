@@ -7,8 +7,10 @@ import prevIcon from "../assets/prevIcon.svg";
 import lastIcon from "../assets/lastIcon.svg";
 import { logOut } from "../features/auth/authSlice";
 import DefaultNav from "../components/molecules/DefaultNav";
+import { useNavigate } from "react-router-dom";
 
 const UsersPage = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const { users, isLoading, isError, error } = useSelector(
         (state) => state.users
@@ -49,7 +51,7 @@ const UsersPage = () => {
     const handleDeleteClick = () => {
         dispatch(logOut());
         localStorage.clear();
-        location.reload();
+        navigate("/signin");
     };
 
     useEffect(() => {

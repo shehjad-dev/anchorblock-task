@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<PrivateRoutes />}>
+                <Route path="/users" element={<PrivateRoutes />}>
                     <Route path="/users" element={<UsersPage />} />
                 </Route>
                 <Route path="/" element={<App />}>
